@@ -56,7 +56,7 @@ These lines are enabling our application to use the `sessions` keyword to access
 Consequently, the act of "logging in" a user works like this: 
 
 1. User fills out a log in form with their email and password. User hits "submit" and posts that form to a route in the controller. 
-2. That controller route gets the email and password from the params. Then, we search the database for a user with that info. Something like `User.find_by(email: params[:email], password: params[:password])`.
+2. That controllerd route gets the email and password from the params. Then, we search the database for a user with that info. Something like `User.find_by(email: params[:email], password: params[:password])`.
 3. The `session[:id]` is set to the ID of that user. 
 
 * Now, navigate to the '/fetch_session_id' route. Notice that we can access and render in the browser the `session[:id]` value. Remember that the session hash, and its content, is available in *any controller route*. That means that whatever you store in there can be accessed at any time. Storing information about the user currently interacting with, or logged into, your app will allow you to know who the current user is on any page of your app. 
